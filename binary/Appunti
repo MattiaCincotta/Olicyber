@@ -1,0 +1,52 @@
+-File ELF: il formato ELF è uno standard per file eseguibili e oggetti binari su sistemi Unix-like. i file ELF posso essere compliati per diverse architetture es 64bit o 32bit.
+
+-Comandi per determinare l'architettura di un ELF: 
+1) file nome_del_file
+2) readelf -h nome_del_file
+3) objdump -f nome_del_file
+
+
+
+-linking dinamico: è una tecnica utilizzata dai sistemi operativi per ridurre la dimensione dei file binari e permettere la condivisione del codice comune tra diversi programmi. Invece di includere tutte le funzioni richieste direttamente nel file eseguibile, queste funzioni sono incluse in librerie condivise.
+
+-ldd: è un comando che mostra le dependeces delle librerie 
+
+
+
+-Sezioni: gli elf sono divisi in sezioni es. text per il codice eseguibile.
+
+-objdump: è un tool che ti permette di analizzare i file binari; Con -h puoi elencare le sezioni di un elf
+
+
+
+-Strings: è un tool utile per estrarre e visualizzare tutte le stringhe stampabili da un file binario
+
+
+
+-Disassembler: sono strumenti che trasformano il codice macchina in una rappresentazione in assembly es. di tool sono IDA e objdump
+
+-Decompiler: sono strumenti che trasformano il codice macchina in una rappresentazione in un linguaggio di alto livello, come C o C++ es. di tool Ghidra
+
+I Disassembler sono usati per andare nello specifico, i decompiler sono usati per avere una visione generale del programma 
+
+
+-rev: devi capire il codice e mandare qualcosa che lo rompa
+
+-pwn: sfrutti le vulnerabilità del linguaggio per rompere il programma
+undefiend behavior: se tu non rispetti una determinata cosa il compilatore fa quello che gli pare
+
+-stack frame: serve per salvarsi le informazioni di ogni funzione, ogni stack frame è salvato nello stack
+
+-return address: ritorna l'indirizzo che ti dice dove andare nello stack frame successivo
+
+-buffer: è una parte dello stack frame dove vengono salvate le variabili locali
+
+-rsp (register stack pointer): è un registro puntatore viene usato per simboleggiare fino a dove si è esteso lo stack decrementanto rsp tu stai allocando memoria sullo stack, cambia durante l'esecuzione della funzione
+-rbp (register base pointer): da vove lo stack si è esteso mantiene la base dello stack frame corrente, rimane uguale per tutto il tempo di esecuzione della funzione
+canary: è un metodo di protezione dello stack, serve per evitare che tu vada a sovrascrivere rbp, return address ma non rsp, viene generato una volta per ogni funzione
+
+PIE (position indipendent executable): se c'è indica che il programma ha i riferimenti relativi e variano in base a dove è allocato il programma, se non c'è l'indirzzamento è fisso 
+
+NX: indica che lo stack non sia eseguibile
+
+checksec: comando che ti da informazioni sul binario

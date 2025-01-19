@@ -1,0 +1,28 @@
+Crittografia: insieme di tecniche che permettono di proteggere delle informazioni tramite una cifratura 
+Ci sono 2 tipi di crittografia: 
+
+1) Crittografia Simmetrica: si hanno un mittente ed un destinatario. Il mittente tramite una chiave privata e un algoritmo di cifratura (Es. AES, DES...) codifica il messaggio (ciphertext) e il destinatario con la stessa chiave e lo stesso algoritmo decodifica il messaggio.
+
+Algoritmo DES: algoritmo di crittografia simmetrica che funziona su blocchi di dati fissi (64 bit) e utilizza una chiave di lunghezza fissa. 
+L'input viene suddiviso in blocchi di dimensione fissa, il primo blocco viene suddiviso XORATO con un vettore di inizializzazione (IV) casuale o predefinito, successivamente vengono eseguite operazioni matematiche tra la chiave e il messggio precedentemente xorato. L'output del primo blocco cifrato diventa l'input per l'operazione XOR del secondo blocco del plaintext.
+Alla fine, il ciphertext è una concatenazione di tutti i blocchi cifrati. 
+
+2) Crittografia Asimmetrica: Qui vengono usate 2 chiavi, una pubblica e una privata. La chiave pubblica viene usata per cifrare i dati mentre la chiave privata serve per decifrarli.
+Es di algoritmi Asimetrici (RSA, ECC, Diffie-Hellman) 
+
+Modularità: diverse modalità di operazione come ECB, CBC, CFB, OFB, CTR, ecc.
+
+------------------------------------------------------------------------------------------
+Funzioni di Hash: Prendono un input e lo processano attraverso una serie di operazioni matematiche. L'input viene diviso in blocchi di dimensione fissa. Ogni blocco viene processato attraverso una serie di operazioni matematiche (bitwise, rotazioni, somme modulari, ecc.), come output verrà ritornato un valore di hash (input hashato). La cosa particolare è che non è possibile risalire al valore originario dell'input semplicemente dal valore di hash. Viene utilizzato nei login infatti quando un utente tenta l'accesso la sua password viene hashata e viene confrontata con quella già inserita nel database.
+Es. di algoritmi di Hash (MD5, SHA-1, SHA-2, SHA-3...)
+
+------------------------------------------------------------------------------------------
+Inverso di un numero:
+a⋅x == 1 (modn) In altre parole, l'inverso di aa modulo nn è quel numero xx che, moltiplicato per aa, dà come risultato 1 quando diviso per n
+
+------------------------------------------------------------------------------------------
+Teorema cinese del resto: serve per trovare un valore x che soddisfi tutte le congruenze contemporaneamente.
+
+------------------------------------------------------------------------------------------
+Diffie-Hellman: è un protocollo crittografico usato per consentire a due parti di stabilire una chiave segreta condivisa anche se comunicano su un canale pubblico. 
+Per decriptare la chiave si usa il logaritmo discreto, che, se scelti i numeri fa impiegare moltissimo tempo a chi prova a bruteforcare la chiave

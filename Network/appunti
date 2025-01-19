@@ -1,0 +1,68 @@
+filtro per indirizzo e dns: ip.src == 192.168.100.3 and dns
+flitro per trovare un determinato contenuto tra i pacchetti: frame.contains 
+filtro per trovare i pacchetti con commenti: frame.comment
+filtro per trovare le conversazioni tra un indirizzo e un altro: ip.src == 192.168.100.1 && ip.dst == 192.168.100.2
+-------------
+
+Estrarre a mano con binwalk: dd if=external.bin of=embedded.png bs=1 skip=138
+
+-external.bin: nome file
+-embedded.png: il nome del file che estrai
+-bs=1: imposta la dimensione del blocco di lettura/scrittura a 1 byte
+-skip=138: indica a dd di saltare i primi 138 byte prima di iniziare l'estrazione (è il decimal che ti da)
+-------------
+
+Differenza tra Protocollo e Pacchetto:
+-Protocollo: Definisce le regole e le procedure per la comunicazione.
+-Pacchetto: È un'unità di trasporto di dati effettivi.
+
+Es. Quando si utilizza il protocollo HTTP per richiedere una pagina web, i dati della richiesta e della risposta vengono suddivisi in pacchetti IP. Il protocollo HTTP definisce come devono essere formati e interpretati i messaggi, mentre i pacchetti IP gestiscono la trasmissione fisica dei dati attraverso la rete.
+
+
+Tipi di protocolli:
+
+-ARP (Address Resolution Protocol): Ogni dispositivo di rete ha un indirizzo IP e un indirizzo MAC, ARP permette a un dispositivo di trovare l'indirizzo MAC associato a un indirizzo IP, necessario per la comunicazione a livello di collegamento dati. Questo protocollo è molto utile per identificare problemi di rete come conflitti con indirizzi IP oppure monitorando questi pacchetti si aiuta a prevenire fenomeni di spoofing.
+Informazioni trasportate: Indirizzo IP del mittente/destinatario e Indirizzo MAC del mittente/destinatario.
+
+
+
+-MDNS (Multicast DNS): è una versione del protocollo DNS che funziona su LAN senza la necessità di un server DNS dedicato permette la comunicazione tra 2 dispositivi senza un intermediario centrale. Es. quando un utente vuole stampare su una stampante di rete senza conoscere il suo indirizzo IP può trovare automaticamente la stampante sulla rete locale.
+Informazioni trasportate: Nomi di host, indirizzi IP associati ai nomi di host, informazioni sui servizi disponibili.	
+
+
+
+-ICMPv6 (Internet Control Message Protocol for IPv6): è utilizzato per la gestione della rete e la diagnosi degli errori, ma include anche nuove funzionalità specifiche per IPv6.
+utilizzi: 
+	1) Invia messaggi di errore quando i pacchetti IP non possono raggiungere la loro destinazione
+	2) Permette di verificare la connettività tra dispositivi
+informazioni trasportate: Messaggi di errore e gestione della rete, inclusa la scoperta dei vicini.
+
+-STP (Spanning Tree Protocol): è utilizzato per prevenire i loop di rete nelle topologie di rete a maglia, non trasporta dati ma scambia informazioni di rete 
+
+-TCP (Transmission Control Protocol): viene utilizzato per stabilire connessioni e garantire la trasmissione affidabile di dati tra due dispositivi su una rete.
+Informazioni trasportate: I dati delle applicazioni, come pagine web, file o messaggi.
+
+-TLS (Transport Layer Security): Garantisce la sicurezza delle comunicazioni su una rete, come internet, cifrando i dati trasmessi e autenticando i partecipanti.
+
+-X11: Serve per la gestione della parte grafica nei sistemi di tipo linux
+
+-QUIC: è un protocollo di trasporto progettato per migliorare le prestazioni di HTTP/2. QUIC funziona su UDP e incorpora caratteristiche che migliorano la velocità e la sicurezza delle connessioni rispetto ai protocolli tradizionali come TCP.
+
+-SSDP (Simple Service Discovery Protocol): consente ai dispositivi e servizi connessi alla rete di scoprirsi reciprocamente e comunicare tra loro senza configurazione manuale.
+-------------
+Campi di wireshark: 
+
+1)No.: Indica il numero del pacchetto
+
+2)TIME: Tempo impiegato per catturare quel determinato pacchetto
+
+3)Source: La colonna SOURCE mostra l'indirizzo del dispositivo che ha inviato il pacchetto che può essere IP, MAC ecc..
+
+4)Destination: viene mostrato l'indirizzo di destinazione del pacchetto che può essere IP, MAC ecc..
+
+5)Protocol: indica il protocollo utilizzato nel pacchetto secifico
+
+6)Lenght: Mostra la dimensione totale del pacchetto inclusi gli header.
+header: Sezioni di metadati che precedono i dati effettivi (payload) in un pacchetto di rete o in un file. Contengono informazioni di controllo e istruzioni su come il pacchetto deve essere trattato.
+
+7)Info: Riassume il tipo di protocollo e l'azione che il pacchetto rappresenta

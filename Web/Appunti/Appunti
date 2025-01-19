@@ -1,0 +1,33 @@
+Richiesta HTTP: è il modo in qui un client chiede dati al server tramite protocollo HTTP; Esistono diversi metodi che indicano l'azione che si vuole eseguire:
+--GET: Richiede la risorsa specificata.
+--POST: Invia dati al server per creare o aggiornare una risorsa.
+--PUT: Aggiorna una risorsa esistente o ne crea una nuova.
+--DELETE: Elimina una risorsa.
+--HEAD: Richiede solo gli header della risorsa, senza il corpo.
+--OPTIONS: Chiede al server quali metodi sono supportati per una risorsa.
+
+Richesta Get con una query string specifica: ottieni quello che specifichi esattamente
+
+Header HTTP: sono coppie chiave-valore che vengono utilizzate per trasmettere informazioni aggiuntive tra client e server
+
+Cookie: è un pezzo di dati che un server web invia al browser del client per memorizzare informazioni tra le richieste HTTP.
+caratteristiche: 1): I cookie vengono memorizzati localmente sul computer dell'utente e inviati automaticamente dal browser al server ogni volta che viene effettuata una richiesta alla stessa origine.
+		 2): Oltre a questi, un cookie può includere attributi aggiuntivi come la data di scadenza, il percorso di validità, e il dominio.
+
+cookie di sessione: sono cookie che vengono cancellati quando la sessione termina
+
+json(JavaScript Object Notation): è un formato di scambio di dati leggero e facilmente leggibile, si usa per esempio nelle richieste http e per questo si parla di body json
+
+CSRF: è una vulnerabilità di sicurezza in cui un attaccante induce un utente autenticato a eseguire un'azione non voluta su un'applicazione web in cui l'utente è autenticato.
+L'utente potrebbe non ricevere i propri acquisti, o peggio, potrebbero essere indirizzati a un luogo non desiderato.
+
+Token CSRF: Verifica che il token inviato con la richiesta corrisponda a quello generato per la sessione dell'utente.
+
+Spider: è un programma automatizzato progettato per navigare e analizzare il contenuto delle pagine web in modo sistematico
+
+SQL injection: è una vulnerabilità di sicurezza che si verifica quando un'applicazione web consente a un attaccante di inserire codice SQL maligno all'interno di una query SQL
+
+SQL injection base: 
+se ho una query del genere: SELECT * FROM users WHERE username = 'input_username';
+potrei provare a inserire: OR 1=1
+la query diventerebbe: SELECT * FROM users WHERE username = 'OR 1=1
