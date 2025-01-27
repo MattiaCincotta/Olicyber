@@ -1,0 +1,3 @@
+flag_hex = "666c61677b3461643072305f3474747234766572733472335f63347274336c6c337d"
+flag = bytes.fromhex(flag_hex).decode()
+print(flag)

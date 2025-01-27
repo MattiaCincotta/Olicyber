@@ -50,3 +50,5 @@ PIE (position indipendent executable): se c'è indica che il programma ha i rife
 NX: indica che lo stack non sia eseguibile
 
 checksec: comando che ti da informazioni sul binario
+
+x/16bx &target: per stampare il contenuto di una variabile
