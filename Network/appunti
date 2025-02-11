@@ -2,7 +2,7 @@ filtro per indirizzo e dns: ip.src == 192.168.100.3 and dns
 flitro per trovare un determinato contenuto tra i pacchetti: frame.contains 
 filtro per trovare i pacchetti con commenti: frame.comment
 filtro per trovare le conversazioni tra un indirizzo e un altro: ip.src == 192.168.100.1 && ip.dst == 192.168.100.2
--------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Estrarre a mano con binwalk: dd if=external.bin of=embedded.png bs=1 skip=138
 
@@ -10,7 +10,7 @@ Estrarre a mano con binwalk: dd if=external.bin of=embedded.png bs=1 skip=138
 -embedded.png: il nome del file che estrai
 -bs=1: imposta la dimensione del blocco di lettura/scrittura a 1 byte
 -skip=138: indica a dd di saltare i primi 138 byte prima di iniziare l'estrazione (è il decimal che ti da)
--------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Differenza tra Protocollo e Pacchetto:
 -Protocollo: Definisce le regole e le procedure per la comunicazione.
@@ -49,7 +49,7 @@ Informazioni trasportate: I dati delle applicazioni, come pagine web, file o mes
 -QUIC: è un protocollo di trasporto progettato per migliorare le prestazioni di HTTP/2. QUIC funziona su UDP e incorpora caratteristiche che migliorano la velocità e la sicurezza delle connessioni rispetto ai protocolli tradizionali come TCP.
 
 -SSDP (Simple Service Discovery Protocol): consente ai dispositivi e servizi connessi alla rete di scoprirsi reciprocamente e comunicare tra loro senza configurazione manuale.
--------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Campi di wireshark: 
 
 1)No.: Indica il numero del pacchetto
@@ -66,3 +66,7 @@ Campi di wireshark:
 header: Sezioni di metadati che precedono i dati effettivi (payload) in un pacchetto di rete o in un file. Contengono informazioni di controllo e istruzioni su come il pacchetto deve essere trattato.
 
 7)Info: Riassume il tipo di protocollo e l'azione che il pacchetto rappresenta
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+record: Unità di dati che associa un nome di dominio a un'informazione specifica:
+
+dig: comando per interrogare il server e ottenre i record es. ==> dig @newstate.challs.olicyber.it -p 12008 the.flag ANY
