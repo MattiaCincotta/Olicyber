@@ -12,8 +12,7 @@ def main():
     conn.sendline(payload)
     print(f'payload: {payload.decode()}')
 
-    response = conn.recvall()
-    print(response.decode())
+    conn.interactive()
 
 if __name__ == "__main__":
     main()

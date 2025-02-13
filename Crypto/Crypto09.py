@@ -10,8 +10,8 @@ def extended_gcd(a, b):
     return gcd, x, y
 
 # Esempio con a = 112, b = 137
-a = 89
-b = 61
+a = 158
+b = 99
 gcd, x, y = extended_gcd(a, b)
 
 print(f"GCD({a}, {b}) = {gcd}")

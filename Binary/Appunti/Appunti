@@ -41,14 +41,32 @@ undefiend behavior: se tu non rispetti una determinata cosa il compilatore fa qu
 
 -buffer: è una parte dello stack frame dove vengono salvate le variabili locali
 
--rsp (register stack pointer): è un registro puntatore viene usato per simboleggiare fino a dove si è esteso lo stack decrementanto rsp tu stai allocando memoria sullo stack, cambia durante l'esecuzione della funzione
--rbp (register base pointer): da vove lo stack si è esteso mantiene la base dello stack frame corrente, rimane uguale per tutto il tempo di esecuzione della funzione
+-rsp (register stack pointer): è un registro puntatore viene usato per simboleggiare fino a dove si è esteso lo stack decrementanto rsp tu stai allocando memoria sullo stack.
+-rbp (register base pointer): base dello stack frame corrente, rimane uguale per tutto il tempo di esecuzione della funzione
 canary: è un metodo di protezione dello stack, serve per evitare che tu vada a sovrascrivere rbp, return address ma non rsp, viene generato una volta per ogni funzione
 
 PIE (position indipendent executable): se c'è indica che il programma ha i riferimenti relativi e variano in base a dove è allocato il programma, se non c'è l'indirzzamento è fisso 
 
-NX: indica che lo stack non sia eseguibile
+NX disabled: indica che lo stack non sia eseguibile
 
 checksec: comando che ti da informazioni sul binario
 
 x/16bx &target: per stampare il contenuto di una variabile
+
+
+Pie: genera l'indirizzo base
+aslr: randomizza il pie
+
+got: Tabella dove sono salvati gli indirizzi delle funzioni e delle variabili imporate da librerie dinamiche, la cosa interessante è che è possibile leggere gli indirizzi delle funzioni salvate, io potrei puntare direttamente ad una funzione salvata nella got 
+
+quando fai una call ad una libreria chia
+
+per farsi stampare i gadgets: ropper --nocolor -f nome_file > gadgets.txt
+
+https://syscalls.mebeim.net/?table=x86/64/x64/latest ==> sito per vedere le syscall a linux 
+
+execve: per eseguire un processo ==> i registri usati per i parametri sono i seguenti:
+	-rdi: Il primo parametro (il percorso del programma da eseguire, per esempio /bin/sh).
+	-rsi: Il secondo parametro (un array di argomenti, argv).
+	-rdx: Il terzo parametro (un array di variabili d'ambiente, envp).
+
