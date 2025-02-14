@@ -31,3 +31,10 @@ SQL injection base:
 se ho una query del genere: SELECT * FROM users WHERE username = 'input_username';
 potrei provare a inserire: OR 1=1
 la query diventerebbe: SELECT * FROM users WHERE username = 'OR 1=1
+
+-----------------------------------------------------------------------
+Due tab di un sito possono interagire tra loro perchè sono same origin (sono nella stessa sandox) che non è la stessa cosa di essere nello stesso sito 
+
+https://github.com/swisskyrepo/PayloadsAllTheThings ==> sito per sql injections, in questa repo c'è una grande documentazione per fare sql injections su diversi tipi di database e come riconscere i database su cui si sta injectando codice.
+
+order by numero_colonna ==> ordina in ordine alfabetico gli elementi di una colonna, è utile per vedere quante colonne ci sono perchè se la colonna data non esiste da errore  

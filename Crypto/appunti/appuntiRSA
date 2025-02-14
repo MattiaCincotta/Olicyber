@@ -5,6 +5,8 @@ se qualcuno volesse mandarmi "ciao" con m=12(m=messaggio) io dovrei fare c = 12^
 
 (a^b)^c = a^(b*c)  se c = 1/b implica che facendo l'inverso ottengo il messaggio però questa cosa non si può fare per via del modulo
 
-avendo quindi c= 12^e mod n se trovo l'inverso di e trovo il messaggio, l'inverso di e è d=pow(e,-1,phi)   phi(p-1)*(q-1)
+avendo quindi c= 12^e mod n se trovo l'inverso di e trovo il messaggio, l'inverso di e è d=pow(e,-1,phi)   phi=(p-1)*(q-1)
 
 facendo c^d mod n = m
+
+cryptoHack
