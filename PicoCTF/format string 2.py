@@ -2,11 +2,11 @@
 
 from pwn import *
 
-context.binary = elf = ELF('/home/mattia/Downloads/vuln')
+context.binary = elf = ELF('./vuln')
 if args.REMOTE:
     conn = remote('rhea.picoctf.net', 52018)
 else:
-    conn = gdb.debug('/home/mattia/Downloads/vuln', '''
+    conn = gdb.debug('/home/mattia/Documents/vuln', '''
        b *main
        c             
     ''')
