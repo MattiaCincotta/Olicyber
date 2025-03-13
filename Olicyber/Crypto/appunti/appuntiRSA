@@ -9,4 +9,3 @@ avendo quindi c= 12^e mod n se trovo l'inverso di e trovo il messaggio, l'invers
 
 facendo c^d mod n = m
 
-cryptoHack

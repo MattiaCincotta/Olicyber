@@ -1,10 +1,10 @@
 #obiettivo: sovrascriverela variabile sus, per scriverci sopra posso usare %n tuttavia sarà necessario calcolare quanti %n quindi l'offset (dove devo scrivere)
 
 from pwn import *
-
-context.binary = elf = ELF('./vuln')
+context.arch = 'amd64'
+#context.binary = elf = ELF('./vuln')
 if args.REMOTE:
-    conn = remote('rhea.picoctf.net', 52018)
+    conn = remote('rhea.picoctf.net', 51236)
 else:
     conn = gdb.debug('/home/mattia/Documents/vuln', '''
        b *main
