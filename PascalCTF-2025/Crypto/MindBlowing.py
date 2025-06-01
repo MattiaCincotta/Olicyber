@@ -4,6 +4,8 @@ from ast import literal_eval
 
 def main():
 
+
+
     r = remote('mindblowing.challs.pascalctf.it', 420)
 
     r.recvuntil(b"> ")
